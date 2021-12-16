@@ -16,13 +16,22 @@ class Courier(models.Model):
         return self.full_name
 
     def total_balance_trip_per_day(self, date):
-        return self.trips.filter(created_time=date).aggregate(total_balance=Sum('price'))
+        return self.trips.filter(
+            created_time__year=date.year,
+            created_time__month=date.month,
+            created_time__day=date.day
+        ).aggregate(total_balance=Sum('price'))
 
     def total_balance_reward_deduction_per_day(self, date):
         from salary.models import RewardDeduction
         reward_transactions = Sum('price', filter=Q(type=RewardDeduction.REWARD))
         deduction_transactions = Sum('price', filter=Q(type=RewardDeduction.DEDUCTION))
-        return self.reward_deductions.filter(created_time=date).aggregate(
+
+        return self.reward_deductions.filter(
+            created_time__year=date.year,
+            created_time__month=date.month,
+            created_time__day=date.day
+        ).aggregate(
             total_balance=Coalesce(reward_transactions, 0) - Coalesce(deduction_transactions, 0)
         )
 

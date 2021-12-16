@@ -32,7 +32,7 @@ class RewardDeduction(BaseModel):
         db_table = 'reward_deduction'
 
 
-class DailySalary(models.Model):
+class DailySalary(BaseModel):
     courier = models.ForeignKey(Courier, verbose_name='daily_salaries', on_delete=models.PROTECT)
     date = models.DateField(verbose_name=_('date'))
     daily_balance = models.IntegerField(verbose_name=_('price'))
@@ -47,7 +47,7 @@ class DailySalary(models.Model):
         unique_together = ('courier', 'date')
 
 
-class WeeklySalary(models.Model):
+class WeeklySalary(BaseModel):
     courier = models.ForeignKey(Courier, verbose_name='weekly_salaries', on_delete=models.PROTECT)
     from_date = models.DateField(verbose_name=_('from date'))
     to_date = models.DateField(verbose_name=_('to date'))
