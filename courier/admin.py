@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from courser.models import Courier
+from courier.models import Courier
 
 
 @admin.register(Courier)

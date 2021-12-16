@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
-from courser.models import Courier
+from courier.models import Courier
 from lib.model import BaseModel
 
 

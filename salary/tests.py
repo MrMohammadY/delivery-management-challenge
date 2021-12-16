@@ -1,6 +1,6 @@
 from django.test import TestCase
 from datetime import date
-from courser.models import Courier
+from courier.models import Courier
 from trip.models import Trip
 from salary.models import DailySalary, RewardDeduction
 

@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'courser.apps.CourserConfig',
+    'courier.apps.CourierConfig',
     'trip.apps.TripConfig',
     'salary.apps.SalaryConfig',
 ]
