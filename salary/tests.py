@@ -28,7 +28,7 @@ class DailySalaryTestCase(TestCase):
         reward_1 = RewardDeduction.objects.create(
             courier=self.courier,
             type=RewardDeduction.REWARD,
-            reason='تشویقی رساندن به موقع',
+            reason='Reward for timely delivery',
             description='...', price=5000
         )
         self.assertEqual(self.salary.daily_balance, trip_1.price + trip_2.price + reward_1.price)
@@ -36,7 +36,7 @@ class DailySalaryTestCase(TestCase):
         deduction_1 = RewardDeduction.objects.create(
             courier=self.courier,
             type=RewardDeduction.DEDUCTION,
-            reason='کسر دیر رساندن',
+            reason='Deduction for bad post',
             description='...',
             price=3000
         )
