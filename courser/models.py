@@ -3,7 +3,7 @@ from django.utils.translation import ugettext_lazy as _
 
 
 class Courier(models.Model):
-    first_name = models.CharField(max_length=30, verbose_name=_('last name'))
+    first_name = models.CharField(max_length=30, verbose_name=_('first name'))
     last_name = models.CharField(max_length=40, verbose_name=_('last name'))
 
     @property
