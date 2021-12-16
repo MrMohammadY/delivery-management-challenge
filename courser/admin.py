@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from courser.models import Courier
+
+
+@admin.register(Courier)
+class CourierAdmin(admin.ModelAdmin):
+    list_display = ('id', 'first_name', 'last_name')
+
