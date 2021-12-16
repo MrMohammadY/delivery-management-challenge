@@ -5,14 +5,14 @@ from django.dispatch import receiver
 from salary.models import RewardDeduction, DailySalary
 from trip.models import Trip
 
-from datetime import datetime
+from datetime import date as date_today
 
 
 @receiver(post_save, sender=RewardDeduction)
 @receiver(post_save, sender=Trip)
 def callback(sender, instance, created, **kwargs):
     with transaction.atomic():
-        date = datetime.today().strftime('%Y-%m-%d')
+        date = date_today.today()
         DailySalary.objects.update_or_create(
             courier=instance.courier,
             date=instance.created_time,
