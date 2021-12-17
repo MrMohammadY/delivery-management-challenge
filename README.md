@@ -8,11 +8,11 @@ This project was created for couriers which calculates their daily salary and we
 
 ### First step
 
-create BMI directory:
+create Delivery_Management directory:
 
     mkdir Delivery_Management
 
-go to BMI directory:
+go to Delivery_Management directory:
 
     cd Delivery_Management
 
@@ -24,7 +24,7 @@ clone the project:
 
     git clone https://github.com/MrMohammadY/delivery-management-challenge.git
 
-create virtualenv in BMI directory:
+create virtualenv in Delivery_Management directory:
 
     virtualenv delivery_venv
 
@@ -48,7 +48,7 @@ install package with:
 
 ### Fourth step
 
-in bmi directory you should create .env file for some django settings(.env files is hidden files):
+in delivery-management-challenge directory you should create .env file for some django settings(.env files is hidden files):
 
     touch .env
 
