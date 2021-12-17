@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'courser.apps.CourserConfig',
+    'rest_framework',
+
+    'courier.apps.CourierConfig',
     'trip.apps.TripConfig',
     'salary.apps.SalaryConfig',
 ]
@@ -122,3 +124,6 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CELERY_TIMEZONE = "Asia/Tehran"
+CELERY_TASK_TIME_LIMIT = 30 * 60
