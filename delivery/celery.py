@@ -21,6 +21,6 @@ app.conf.beat_schedule = {
     # Executes every Monday morning at 7:30 a.m.
     'add-every-friday-midnight': {
         'task': 'salary.tasks.calculate_weekly_salary',
-        'schedule': crontab(),
+        'schedule': crontab(hour=0, minute=1, day_of_week='saturday'),
     },
 }

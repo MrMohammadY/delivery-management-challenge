@@ -18,7 +18,7 @@ def callback(sender, instance, created, **kwargs):
                 courier=instance.courier,
                 date=instance.created_time,
                 defaults={
-                    'daily_balance': instance.courier.calculate_total_balance_per_day(date)
+                    'daily_balance': instance.courier.calculate_total_balance_per_day(instance.created_time.date())
                 }
             )
 
