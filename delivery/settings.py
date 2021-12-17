@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'rest_framework',
+
     'courier.apps.CourierConfig',
     'trip.apps.TripConfig',
     'salary.apps.SalaryConfig',
